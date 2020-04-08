@@ -8,7 +8,8 @@ curl "http://localhost:4741/paintings" \
     "painting": {
       "title": "'"${TITLE}"'",
       "artist": "'"${ARTIST}"'",
-      "date": "'"${DATE}"'"
+      "date": "'"${DATE}"'",
+      "user_id": "'"${USERID}"'"
     }
   }'
 
