@@ -15,7 +15,7 @@ class PaintingsController < OpenReadController
 
   # POST /paintings
   def create
-    @painting = Painting.new(painting_params)
+    @painting = current_user.paintings.build(painting_params)
 
     if @painting.save
       render json: @painting, status: :created, location: @painting
@@ -42,7 +42,7 @@ class PaintingsController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_painting
-    @painting = Painting.find(params[:id])
+    @painting = current_user.paintings.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
